@@ -1,7 +1,7 @@
 ---
 layout: post
-page.title: "Enyert Vinas, Initializing the site"
-page.date: 2018-12-09
+title: "Enyert Vinas, Initializing the site"
+date: 2018-12-09
 ---
 
 Well. Finally got around to putting this old website together. 
