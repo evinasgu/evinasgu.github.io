@@ -1,5 +1,5 @@
 # main text of home
-name: Enyert Vinas
+name: Enyert Viñas
 bio: Running to a world without side effects! Software developer. FP Enthusiast
 
 # twitter summary info
@@ -55,7 +55,7 @@ email: enyert.vinas@gmail.com
 
 authors:
     enyert:
-        name: Enyert Vinas
+        name: Enyert Viñas
         bio: Running to a world without side effects! Software developer. FP Enthusiast
         external-image: false
         picture: assets/images/profile.jpeg
