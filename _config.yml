@@ -58,7 +58,7 @@ authors:
         name: Enyert Viñas
         bio: Running to a world without side effects! Software developer. FP Enthusiast
         external-image: false
-        picture: assets/images/profile.jpeg
+        picture: assets/images/profile.jpg
         twitter: enyert
 
 # do you want a larger site? change the option below
@@ -71,7 +71,7 @@ width: normal
 # paginate_path: "blog/:num/"
 
 # if you don't need projects, comment the *projects* configs below
-projects: true
+projects: false
 
 # if you don't need "about" or "blog", comment them out below
 about: true
