@@ -1,7 +1,7 @@
 ---
-title: ":ramen: Indigo, minimalist jekyll theme"
+title: ":ramen: Liberator + Clojure REST API, First approach - Part 1"
 layout: post
-date: 2016-01-23 22:10
+date: 2016-05-09 22:10
 tag: jekyll
 image: https://koppl.in/indigo/assets/images/jekyll-logo-light-solid.png
 headerImage: true
