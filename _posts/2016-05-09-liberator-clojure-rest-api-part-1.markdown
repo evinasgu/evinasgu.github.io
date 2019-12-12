@@ -5,8 +5,13 @@ date: 2016-05-09 22:44
 image: /assets/images/liberator-logo.png
 headerImage: true
 tag:
-- markdown
-- elements
+- Clojure
+- Leiningen
+- Compojure
+- Liberator
+- Rest
+- API
+- Functional Programming
 star: true
 category: blog
 author: enyert

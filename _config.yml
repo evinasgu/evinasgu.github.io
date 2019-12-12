@@ -5,6 +5,11 @@ bio: Running to a world without side effects! Software developer. FP Enthusiast
 # twitter summary info
 description: A blog about technology and stuff related
 
+# donation info
+donation-image: assets/images/donations.png
+ppme-url: https://paypal.me/kigenizer?locale.x=en_US
+
+
 # if it's an external image, update below for true
 # better with square images
 external-image: false
