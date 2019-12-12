@@ -5,11 +5,6 @@ bio: Running to a world without side effects! Software developer. FP Enthusiast
 # twitter summary info
 description: A blog about technology and stuff related
 
-# donation info
-donation-image: assets/images/donations.png
-ppme-url: https://paypal.me/kigenizer?locale.x=en_US
-
-
 # if it's an external image, update below for true
 # better with square images
 external-image: false
@@ -19,7 +14,7 @@ picture: assets/images/profile.jpg
 # and specify source (external or local).
 resume: true
 resume-external: true
-resume-url: https://google.com/?q=my+resume
+resume-url: https://drive.google.com/open?id=1ANlOsX0Xc7ZOn0W06o9P_oeT6ryO4p_w
 
 url: http://evinasgu.github.io
 # your url: http://USERNAME.github.io
