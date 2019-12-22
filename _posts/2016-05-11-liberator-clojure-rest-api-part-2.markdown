@@ -18,7 +18,7 @@ author: enyert
 description: A Little more in-deep introduction about building APIs with Liberator and Clojure
 ---
 
-In [the first part](http://kigenizer.me/liberator-clojure-rest-api-part-1/) of this approach, we started a clojure project with *lein compojure* template and we
+In [the first part](https://evinasgu.github.io/liberator-clojure-rest-api-part-1/) of this approach, we started a clojure project with *lein compojure* template and we
 made some modifications on *project.cl* file.
 
 In this post, I'll explain every part of our project with more details.
