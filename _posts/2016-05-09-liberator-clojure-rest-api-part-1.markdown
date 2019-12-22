@@ -160,18 +160,18 @@ We will use the following approach over the lein compojure template:
 ![Project Structure]({{ site.baseurl }}/assets/images/liberator_tutorial_folder_structure.png)
 
 ##### Description of fundamental folders and files
-* [*project.clj:*](https://github.com/enyert/liberator-service/blob/master/project.clj) This file contains information of the
+* [*project.clj:*](https://github.com/Kigenizer/liberator-service/blob/master/project.clj) This file contains information of the
 dependencies and initial configurations needed for our project to work properly.
 
-* [*handler.clj:*](https://github.com/enyert/liberator-service/blob/master/src/liberator_service/handler.clj) This file works as a middleware for compojure and
+* [*handler.clj:*](https://github.com/Kigenizer/liberator-service/blob/master/src/liberator_service/handler.clj) This file works as a middleware for compojure and
 ring. Our routes are exposed here.
 
-* [*models/db.clj:*](https://github.com/enyert/liberator-service/blob/master/src/liberator_service/models/db.clj) Here we have our database operations made with
+* [*models/db.clj:*](https://github.com/Kigenizer/liberator-service/blob/master/src/liberator_service/models/db.clj) Here we have our database operations made with
 jdbc. This represents the connection between our data and resources.
 
-*  [*resources/:*](https://github.com/enyert/liberator-service/tree/master/src/liberator_service/resources) This folder contains the resource definition to interact with the functions from *db.clj*. We use liberator to define every resource.
+*  [*resources/:*](https://github.com/Kigenizer/liberator-service/tree/master/src/liberator_service/resources) This folder contains the resource definition to interact with the functions from *db.clj*. We use liberator to define every resource.
 
-* [*routes/:*](https://github.com/enyert/liberator-service/tree/master/src/liberator_service/routes) Inside of this folder we have the control of the API endpoints
+* [*routes/:*](https://github.com/Kigenizer/liberator-service/tree/master/src/liberator_service/routes) Inside of this folder we have the control of the API endpoints
 and their relationships with the resources.
 
 
@@ -223,4 +223,4 @@ export CLOJUCHIPS_DB_PASS=password_value
 
 After this step, we have our project ready to start coding. I will explain more details
 of *ClojuChips* in the next part of this article. If you want to check the project go
-to [this repository](https://github.com/enyert/liberator-service.git).
+to [this repository](https://github.com/Kigenizer/liberator-service.git).

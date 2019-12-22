@@ -83,7 +83,7 @@ jdbc.
 Here we defined a value named db with the basic information about the database.
 Note that we are not exposing via hard-code our database information, instead
 we read our database parameters from the environment variables created in the
-[previous post](http://enyert.github.io/rest-api-clojure-tutorial/).  
+[previous post](https://evinasgu.github.io/liberator-clojure-rest-api-part-1/).  
 
 ##### Generic operations
 
@@ -177,7 +177,7 @@ A resource follows the relevant requirements of our API design and specifies som
 behaviour according to Liberator resources specification.
 
 ##### What is Liberator?
-When I wonder about Liberator, I usually think about a tool to helps us to represent 
+When I wonder about Liberator, I usually think about a tool to helps us to represent
 our data as specific resources following certain HTTP specifications. We are using
 Liberator together with Ring and Compojure.
 
@@ -193,13 +193,13 @@ A resource in Liberator contains a set of keys. Each key has specific meanings a
 actions associated. A key can fall into one of these categories:
 
 * Decision
-* Handler 
+* Handler
 * Action
 * Declaration
 
 ##### Decision
 Decisions are used to take certain actions in response to specific events. The
-decision keys have a "?" at the end and their handler must be a boolean value. 
+decision keys have a "?" at the end and their handler must be a boolean value.
 
 For a complete list of decisions, you can check [this link](http://clojure-liberator.github.io/liberator/doc/decisions.html).
 
@@ -210,7 +210,7 @@ For a complete list of handlers, you can check [this link](https://clojure-liber
 
 ##### Action
 An action represents the current state of the client(PUT, DELETE, POST). Actions have an exclamation
-point in the end "!" to indicate that they are mutating the application's state. 
+point in the end "!" to indicate that they are mutating the application's state.
 
 When an action is triggered, we can use the *handle-created* to return the result to the client.
 
@@ -232,7 +232,7 @@ Namespace: *liberator-service.resources.promotion*
   (:require [liberator.core
              :refer [defresource resource request-method-in]]
             [cheshire.core :refer [generate-string]]
-            [liberator-service.models.db :refer 
+            [liberator-service.models.db :refer
              [read-all-promotions
               read-one-promotion
               update-promotion
@@ -280,7 +280,7 @@ Namespace: *liberator-service.resources.product*
   (:require [liberator.core
              :refer [defresource resource request-method-in]]
             [cheshire.core :refer [generate-string]]
-            [liberator-service.models.db :refer 
+            [liberator-service.models.db :refer
              [read-all-products
               read-one-product
               update-product
@@ -304,7 +304,7 @@ Namespace: *liberator-service.resources.product*
   :service-available? true
   :allowed-methods [:post]
   :post! (fn [_] (create-product product))
-  :handle-created product 
+  :handle-created product
   :available-media-types ["application/json"])
 
 (defresource product-update [id product]
@@ -321,7 +321,7 @@ Namespace: *liberator-service.resources.product*
   :available-media-types ["application/json"])
 ```
 As you can see, we have used handlers, actions, decisions and declarations in this file. For example;
-we used the declaration **available-media-types** to specify that we want to use "application/json" format, 
+we used the declaration **available-media-types** to specify that we want to use "application/json" format,
 we used the handler **handle-ok** to execute certain actions in response to successful operation,
 we used the decision **service-available?** to confirm that we want to expose this resource, and
 we used the action **put!** to define an update operation.
@@ -351,7 +351,7 @@ store the result in the id parameter.
 After the evaluation of the expression **GET "/book/:id"**, compojure execute the next function evaluation. In this example executes
 (str "You want to see the id: " id) to generate a response to the client.
 
-In our project, we are using a context to make groups of common URI to simplify the code. You can see our routes in the following code 
+In our project, we are using a context to make groups of common URI to simplify the code. You can see our routes in the following code
 snippets:
 
 ```clojure
@@ -393,7 +393,7 @@ using lein, with the following command:
 lein ring server
 ```
 
-This command will create a server using jetty at the port 3000. If you want to use another port 
+This command will create a server using jetty at the port 3000. If you want to use another port
 just use:
 
 ```bash
@@ -406,11 +406,10 @@ Where port is the number of the port that you wanna use.
 
 Congratulations! We did a great job, our API is ready!... Uhmmm but Don't drink too much kool aid! We are still needing to
 build tests and authentication processes for our API. I will publish 2 posts related with testing and authentication
-to finish this job. 
+to finish this job.
 
-I hope these posts have helped you to understand the basic of the stack used used for this project 
-Clojure/Ring/Compojure/Liberator/PostgreSQL. Remember you can clone or fork the project at [source code](https://github.com/enyert/liberator-service.git) 
+I hope these posts have helped you to understand the basic of the stack used used for this project
+Clojure/Ring/Compojure/Liberator/PostgreSQL. Remember you can clone or fork the project at [source code](https://github.com/Kigenizer/liberator-service.git)
 anytime.
 
 Happy coding! =)
-
