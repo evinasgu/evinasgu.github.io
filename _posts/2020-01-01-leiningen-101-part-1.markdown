@@ -47,6 +47,12 @@ Other programming languages include this type of tools too. In Java for example 
 
 ### Installation
 
+There are two ways to install Leiningen, using the leiningen script located at [this link](https://leiningen.org/) or using a package manager. We will cover these two options, but I recommend you to install leiningen using a package manager because it can handle the modification of the $PATH environment variable and the updates from new versions.
+
+#### Manual Installation
+
+#### Using a package manager(For this example, we will use [SDKMAN!](https://sdkman.io/))
+
 
 
 
