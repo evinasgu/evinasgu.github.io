@@ -83,6 +83,25 @@ I recommend using a package manager for lein installation because these tools ca
 
 After [SDKMAN!](https://sdkman.io/) is installed just use ***sdk install leiningen*** command, wait for the installation and we will be ready to start with Leiningen!
 
+
+### Using leiningen help
+
+#### CLI
+
+First of all, we need to remember how a CLI(**C**ommand-**L**ine **I**nterface) works. 
+
+A CLI(**C**ommand-**L**ine **I**nterface) is a tool that processess certain instructions to a ***program*** in the form of **structured** text lines. In general, our ***program*** is a **command-line interpreter** that handle the parsing process and validation of the text lines. Then this ***program*** provides functionality in response to our instructions.
+
+Coming back to our context, we have lein as our CLI. lein receives **tasks**, e.g, new, help, clean, install, and more. These tasks are related with many functions and we can pass data to them via **arguments**. For example, if we introduce the command ***lein new compojure leiningen-101*** the task here is **new** and the arguments are **compojure** and **leiningen-101**. Leiningen parse and validate the command introduced using the **command-line interpreter** and try to trigger the related functionality, in this case it will be new functionality. 
+
+
+#### help task
+
+### Create our new project
+
+#### new tasl
+
+
 ##### Utility functions
 
 ```clojure
