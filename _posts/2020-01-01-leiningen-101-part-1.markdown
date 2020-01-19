@@ -99,7 +99,7 @@ Coming back to our context, we have lein as our CLI. lein receives **tasks**, e.
 
 ### Create our new project
 
-#### new tasl
+#### new task
 
 
 ##### Utility functions
