@@ -64,15 +64,22 @@ Linux users the script is located [here(linux script)](https://raw.githubusercon
 
 You can use wget or any equivalent tool for this purpose.
 
-Remember to make the script executable using ***chmod a+x <PATH_TO_LEIN>/lein*** in linux. chmod command modifies Linux file permissions, **a** indicator means that the script can be executed for the actual user, groups, and others the file belongs to. The **x** modifier add the execute permission. Remember the **+** operator add permissions to a file.
+Remember to make the script executable using the following command:
+```Bash
+chmod a+x <PATH_TO_LEIN>/lein
+``` 
+**chmod** command modifies Linux file permissions, **a** indicator means that the script can be executed for the actual user, groups, and others the file belongs to. The **x** modifier add the execute permission. Remember the **+** operator add permissions to a file.
 
 - Put lein in your $PATH or add the <PATH_TO_LEIN> to your $PATH
 
-***$PATH*** is an environment variable that contains a list of directories where executable programs are located. If you put the lein script in one of the directories of your $PATH your system will recognize it as an executable. On the other hand, you can add a custom location to your $PATH and get the same result. Remember the locations in our $PATH are separated by ":" symbol.
+**$PATH** is an environment variable that contains a list of directories where executable programs are located. If you put the lein script in one of the directories of your $PATH your system will recognize it as an executable. On the other hand, you can add a custom location to your $PATH and get the same result. Remember the locations in our $PATH are separated by ":" symbol.
 
 - Run lein
 
-Type ***lein*** in your shell and it will download all the needed files to start using it!
+Type *lein* in your shell and it will download all the needed files to start using it!
+
+To verify the installation is correct type ```lein -v``` or ```lein --version``` in your terminal, you could see something like this: 
+IMAGE
 
 
 #### Using a package manager(For this example, we will use [SDKMAN!](https://sdkman.io/)) == Recomended == 
@@ -81,7 +88,10 @@ I recommend using a package manager for lein installation because these tools ca
 
 [SDKMAN!](https://sdkman.io/) is a tool to manage multiple versions of many development kits. The installation is easy, just follow the instruction [here](https://sdkman.io/install)
 
-After [SDKMAN!](https://sdkman.io/) is installed just use ***sdk install leiningen*** command, wait for the installation and we will be ready to start with Leiningen!
+After [SDKMAN!](https://sdkman.io/) is installed just use ```sdk install leiningen``` command, wait for the installation and we will be ready to start with Leiningen!
+
+To verify the installation is correct type ```lein -v``` or ```lein --version``` in your terminal, you could see something like this:
+IMAGE
 
 
 ### Using leiningen help
@@ -92,36 +102,43 @@ First of all, we need to remember how a CLI(**C**ommand-**L**ine **I**nterface) 
 
 A CLI(**C**ommand-**L**ine **I**nterface) is a tool that processess certain instructions to a ***program*** in the form of **structured** text lines. In general, our ***program*** is a **command-line interpreter** that handle the parsing process and validation of the text lines. Then this ***program*** provides functionality in response to our instructions.
 
-Coming back to our context, we have lein as our CLI. lein receives **tasks**, e.g, new, help, clean, install, and more. These tasks are related with many functions and we can pass data to them via **arguments**. For example, if we introduce the command ***lein new compojure leiningen-101*** the task here is **new** and the arguments are **compojure** and **leiningen-101**. Leiningen parse and validate the command introduced using the **command-line interpreter** and try to trigger the related functionality, in this case it will be new functionality. 
+Coming back to our context, we have lein as our CLI. lein receives **tasks**, e.g, new, help, clean, install, and more. These tasks are related with many functions and we can pass data to them via **arguments**. For example, if we introduce the command ```lein new compojure leiningen-101``` the task here is **new** and the arguments are **compojure** and **leiningen-101**. Leiningen parse and validate the command introduced using the **command-line interpreter** and try to trigger the related functionality, in this case it will be new functionality. 
 
 #### help task
 
-### Create our new project
+We installed Leiningen and we understand how a CLI works, excellent! But one of the things I learned with my experience is that we need to figure out how to get help before using a new tool. For this part, we will use the CLI
+to learn how the **help task** works.
 
-#### new task
+Please type ```lein -h``` or ```lein --help``` in your terminal. You will see this output: IMAGE
 
+We can see a short definition of Lein, a list of available task, the global options and the MOST important one: ```Run 'lein help $TASK' for details```. Here **$TASK** symbol means that you can get the description of any task you
+insert as **$TASK**. Lets try **new** task typing ```lein -h new```, we will see something like this: IMAGE
 
-##### Utility functions
+All the detailed information needed to create our project is presented, so we are ready to create a new project!
 
-```clojure
-;; Utility operations
+### Creating our new project
 
-(defn get-environment-var
-  "Get the value of an environment variable"
-  [name]
-  (System/getenv name))
+As I mentioned in the help task section, the command to create our project is ```lein new```, it generates basic project structures based in templates. I have used four templates: **default** commonly used for libraries, **app** 
+for standalone applications and, **compojure** and **luminus** for web applications. There are other templates listed in [here](https://clojars.org/search?q=lein-template) if you need more information. 
+For this example I will use the **app** template, so lets try it!
 
-(defn convert-dates
-  "Convert dates from miliseconds to java.sql.Timestamp object"
-  [date1 date2]
-  (hash-map
-   :starting_date (java.sql.Timestamp. date1)
-   :ending_date (java.sql.Timestamp. date2)))
+#### Getting the template description
 
-(defn process-promotion
-  "Merge a promotion map with new dates from convert-dates function"
-  [promotion]
-  (merge promotion
-    (convert-dates (:starting_date promotion) (:ending_date promotion))))
-```
+Please type ```lein new :show app```(the **:show** argument is used to get descriptions of specified templates), we will receive the following output: IMAGE
+
+As you can see in the image, we received a little description of the template and the the argument list. The argument list contains the different things that we need to pass to Leiningen to generate a project with a specific
+template. In this case we need to pass the name argument, but this can be different for other project. For example, if we type ```lein new :show luminus``` the argument list is this ```Argument list: ([name & feature-params])```, 
+this means we need to provide the name and other feature-params(if needed) to Leiningen in order to generate our initial project.
+
+#### Executing the command
+
+We obtained the description of the app template using the :show argument, so type ```lein new app first-contact``` to obtain this mesage ```Generating a project called first-contact based on the 'app' template.```. When this command
+finish, we will have a new folder named first-contact with the following structure: IMAGE
+
+This is the basic structure for the app template and now we can start working with our project using the files generated by Leiningen. This is important because it saves the time of creating the folder hierarchy and the individual
+files manually.
+
+I hope this post had been useful for you to understand the basic first steps with Leiningen. In the second part we will cover the project.clj file and the dependency management feature provided by Leiningen.
+
+Happy coding! =)
 
