@@ -94,7 +94,6 @@ A CLI(**C**ommand-**L**ine **I**nterface) is a tool that processess certain inst
 
 Coming back to our context, we have lein as our CLI. lein receives **tasks**, e.g, new, help, clean, install, and more. These tasks are related with many functions and we can pass data to them via **arguments**. For example, if we introduce the command ***lein new compojure leiningen-101*** the task here is **new** and the arguments are **compojure** and **leiningen-101**. Leiningen parse and validate the command introduced using the **command-line interpreter** and try to trigger the related functionality, in this case it will be new functionality. 
 
-
 #### help task
 
 ### Create our new project
