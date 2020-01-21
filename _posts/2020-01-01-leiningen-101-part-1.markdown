@@ -1,7 +1,7 @@
 ---
 title: "Leiningen 101 part I"
 layout: post
-date: 2016-05-11 22:44
+date: 2020-01-01 22:44
 image: /assets/images/leiningen.jpg
 headerImage: true
 tag:
